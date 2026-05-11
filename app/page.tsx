@@ -30,7 +30,9 @@ function useCountUp(target: number, duration = 1800) {
   return { val, ref };
 }
 
-const stats = [
+type Stat = { end: number; suffix: string; label: string; prefix?: string; decimal?: boolean };
+
+const stats: Stat[] = [
   { end: 400, suffix: "+", label: "Federal Cases Guided" },
   { end: 26, suffix: " yrs", label: "Inside the Federal System — Our Foundation" },
   { prefix: "57→", end: 15, suffix: "", label: "Months Reduced — Documented Client Outcome" },
@@ -534,7 +536,7 @@ export default function Home() {
             className="stats-grid"
           >
             {stats.map((s) => (
-              <StatItem key={s.label} end={s.end} suffix={s.suffix} label={s.label} decimal={s.decimal} />
+              <StatItem key={s.label} end={s.end} suffix={s.suffix} label={s.label} decimal={s.decimal} prefix={s.prefix} />
             ))}
           </div>
         </div>
