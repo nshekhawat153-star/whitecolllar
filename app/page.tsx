@@ -149,7 +149,7 @@ const attorneyEndorsements = [
     quote: "I worked with WCA during the Varsity Blues case in 2019 — they achieved significant results.",
     author: "David Rosenfield",
     role: "Former Assistant U.S. Attorney, D.N.J.",
-    image: "https://www.whitecollaradvice.com/wp-content/uploads/2025/02/Screenshot-2025-02-06-at-9.47.28 AM-e1757110203453.webp",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=256&h=256&auto=format&fit=crop",
     badge: "Varsity Blues Case",
   },
 ];
@@ -784,6 +784,352 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── SECTION A — Long-Form Videos ──────────────────────────────────────── */}
+      <section style={{ background: "var(--bg-primary, #ffffff)", padding: "5rem 0", borderTop: "1px solid var(--border, #e2e8f0)" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+            <span
+              style={{
+                display: "inline-block",
+                background: "rgba(56,95,246,0.08)",
+                color: "#385ff6",
+                border: "1px solid rgba(56,95,246,0.2)",
+                fontSize: "0.7rem",
+                fontWeight: 600,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                padding: "0.25rem 0.75rem",
+                borderRadius: "999px",
+                fontFamily: "var(--font-inter)",
+                marginBottom: "1rem",
+              }}
+            >
+              Educational Authority
+            </span>
+            <motion.h2
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+              style={{
+                fontFamily: "var(--font-playfair, serif)",
+                fontWeight: 900,
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                letterSpacing: "-0.04em",
+                color: "#030712",
+                marginBottom: "1rem",
+              }}
+            >
+              Learn from the people who&apos;ve lived it.
+            </motion.h2>
+            <p style={{ fontFamily: "var(--font-inter)", fontSize: "1.125rem", color: "#64748b", maxWidth: "600px", margin: "0 auto" }}>
+              Every strategy we use with clients is documented publicly. Watch before you call.
+            </p>
+          </div>
+
+          <div
+            style={{
+              background: "var(--bg-surface, #f8fafc)",
+              border: "1px solid var(--border, #e2e8f0)",
+              borderRadius: "16px",
+              overflow: "hidden",
+              display: "grid",
+              gridTemplateColumns: "1.5fr 1fr",
+              marginBottom: "2rem",
+            }}
+            className="featured-video-grid"
+          >
+            <a
+              href="https://www.youtube.com/watch?v=KgP_9aRrEZs"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                position: "relative",
+                display: "block",
+                background: "#000",
+                aspectRatio: "16/9",
+              }}
+            >
+              <img
+                src="https://img.youtube.com/vi/KgP_9aRrEZs/maxresdefault.jpg"
+                alt="Why White Collar Defendants Need More Than a Lawyer"
+                style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.85 }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  width: "56px",
+                  height: "56px",
+                  background: "var(--accent, #385ff6)",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                  transition: "transform 0.2s",
+                }}
+              >
+                <div style={{ width: 0, height: 0, borderTop: "8px solid transparent", borderBottom: "8px solid transparent", borderLeft: "14px solid white", marginLeft: "4px" }}></div>
+              </div>
+            </a>
+            <div style={{ padding: "2.5rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <div style={{ marginBottom: "1rem" }}>
+                <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.75rem", fontWeight: 700, color: "#385ff6", background: "rgba(56,95,246,0.1)", padding: "0.2rem 0.6rem", borderRadius: "4px" }}>
+                  CNN Interview
+                </span>
+              </div>
+              <h3 style={{ fontFamily: "var(--font-inter)", fontWeight: 600, fontSize: "1.2rem", color: "#030712", marginBottom: "1rem", lineHeight: 1.4 }}>
+                Why White Collar Defendants Need More Than a Lawyer
+              </h3>
+              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem", color: "var(--text-secondary, #64748b)", lineHeight: 1.6, marginBottom: "2rem" }}>
+                Justin Paperny explains to CNN why the work done before sentencing — narrative, documentation, community service — determines outcomes more than courtroom arguments.
+              </p>
+              <a href="https://www.youtube.com/watch?v=KgP_9aRrEZs" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ alignSelf: "flex-start" }}>
+                Watch Now →
+              </a>
+            </div>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "2rem",
+              marginBottom: "3rem",
+            }}
+            className="cards-grid"
+          >
+            {[
+              {
+                id: "9uaSWQdCt4c",
+                badge: "Fox News",
+                title: "Federal Sentencing — What Defendants Get Wrong",
+                link: "https://www.youtube.com/watch?v=9uaSWQdCt4c"
+              },
+              {
+                id: "7wYxISAHpRI",
+                badge: "Dr. Phil",
+                title: "The Truth About Federal Prison Preparation",
+                link: "https://www.youtube.com/watch?v=7wYxISAHpRI"
+              }
+            ].map((v, i) => (
+              <a
+                key={`${v.id}-${i}`}
+                href={v.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background: "var(--bg-surface, #f8fafc)",
+                  border: "1px solid var(--border, #e2e8f0)",
+                  borderRadius: "12px",
+                  overflow: "hidden",
+                  textDecoration: "none",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <div style={{ position: "relative", background: "#000", aspectRatio: "16/9" }}>
+                  <img 
+                    src={`https://img.youtube.com/vi/${v.id}/maxresdefault.jpg`} 
+                    alt={v.title}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.8 }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      width: "40px",
+                      height: "40px",
+                      background: "rgba(0,0,0,0.6)",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      border: "2px solid #fff",
+                    }}
+                  >
+                    <div style={{ width: 0, height: 0, borderTop: "6px solid transparent", borderBottom: "6px solid transparent", borderLeft: "10px solid white", marginLeft: "3px" }}></div>
+                  </div>
+                </div>
+                <div style={{ padding: "1.25rem", flexGrow: 1, display: "flex", flexDirection: "column" }}>
+                  <div style={{ marginBottom: "0.75rem" }}>
+                    <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.7rem", fontWeight: 700, color: "#385ff6", background: "rgba(56,95,246,0.1)", padding: "0.2rem 0.5rem", borderRadius: "4px" }}>
+                      {v.badge}
+                    </span>
+                  </div>
+                  <h4 style={{ fontFamily: "var(--font-inter)", fontWeight: 600, fontSize: "0.875rem", color: "#030712", lineHeight: 1.4, margin: 0 }}>
+                    {v.title}
+                  </h4>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+            <a href="https://www.youtube.com/@WhiteCollarAdviceOfficial" target="_blank" rel="noopener noreferrer" className="btn-ghost">
+              See All Videos
+            </a>
+            <a href="https://www.whitecollaradvice.com/complimentary-consultation-call" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              Join the Tuesday Webinar →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION B — Shorts ──────────────────────────────────────── */}
+      <section style={{ background: "var(--bg-surface, #f8fafc)", padding: "5rem 0", borderTop: "1px solid var(--border, #e2e8f0)", borderBottom: "1px solid var(--border, #e2e8f0)" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+            <span
+              style={{
+                display: "inline-block",
+                background: "rgba(56,95,246,0.08)",
+                color: "#385ff6",
+                border: "1px solid rgba(56,95,246,0.2)",
+                fontSize: "0.7rem",
+                fontWeight: 600,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                padding: "0.25rem 0.75rem",
+                borderRadius: "999px",
+                fontFamily: "var(--font-inter)",
+                marginBottom: "1rem",
+              }}
+            >
+              Quick Answers
+            </span>
+            <motion.h2
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+              style={{
+                fontFamily: "var(--font-playfair, serif)",
+                fontWeight: 900,
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                letterSpacing: "-0.04em",
+                color: "#030712",
+                marginBottom: "1rem",
+              }}
+            >
+              60 seconds. Real answers.
+            </motion.h2>
+            <p style={{ fontFamily: "var(--font-inter)", fontSize: "1rem", color: "#64748b", maxWidth: "500px", margin: "0 auto" }}>
+              Filmed between client calls. No scripts. The exact questions defendants and families ask us every day.
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              overflowX: "auto",
+              scrollSnapType: "x mandatory",
+              gap: "1rem",
+              paddingBottom: "1.5rem",
+              marginBottom: "2rem",
+              WebkitOverflowScrolling: "touch",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+            className="hide-scrollbar"
+          >
+            {[
+              { id: "_3SdyzByZmI", title: "Should you hire a prison consultant?" },
+              { id: "cbCqjWF3gjY", title: "What judges actually read at sentencing" },
+              { id: "Ibin5tbeer8", title: "The #1 mistake defendants make" },
+              { id: "TBXHFAILGXg", title: "When to start your mitigation strategy" },
+              { id: "55lN1Jp3AnU", title: "Preparing for the PSR interview" },
+              { id: "4ig-SijyfDM", title: "Common federal sentencing myths" },
+              { id: "FRWLv8BurSA", title: "How to write a character letter" },
+              { id: "KgP_9aRrEZs", title: "What happens if you do nothing" },
+              { id: "9uaSWQdCt4c", title: "Understanding federal guidelines" },
+              { id: "7wYxISAHpRI", title: "Life inside a federal prison camp" }
+            ].map((short, i) => (
+              <a
+                key={i}
+                href={`https://www.youtube.com/shorts/${short.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  width: "160px",
+                  aspectRatio: "9/16",
+                  background: "#000",
+                  border: "1px solid var(--border, #e2e8f0)",
+                  borderRadius: "12px",
+                  overflow: "hidden",
+                  scrollSnapAlign: "start",
+                  flexShrink: 0,
+                  position: "relative",
+                  display: "flex",
+                  textDecoration: "none",
+                  transition: "transform 0.2s, box-shadow 0.2s",
+                }}
+                className="short-card"
+              >
+                <img 
+                  src={`https://img.youtube.com/vi/${short.id}/maxresdefault.jpg`} 
+                  alt={short.title}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.8 }}
+                />
+                <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "40px", height: "40px", background: "rgba(255,255,255,0.2)", backdropFilter: "blur(4px)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(255,255,255,0.3)" }}>
+                  <div style={{ width: 0, height: 0, borderTop: "6px solid transparent", borderBottom: "6px solid transparent", borderLeft: "10px solid white", marginLeft: "2px" }}></div>
+                </div>
+                
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "linear-gradient(transparent, rgba(0,0,0,0.95))", padding: "2rem 0.75rem 0.75rem" }}>
+                  <h4 style={{ fontFamily: "var(--font-inter)", fontWeight: 600, fontSize: "0.75rem", color: "#fff", lineHeight: 1.4, margin: 0, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                    {short.title}
+                  </h4>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", marginBottom: "2.5rem" }}>
+            <a 
+              href="https://www.youtube.com/@WhiteCollarAdviceOfficial/shorts" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              title="YouTube Shorts"
+              style={{ width: "44px", height: "44px", borderRadius: "50%", border: "1px solid #e2e8f0", background: "transparent", color: "#64748b", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.2s" }}
+              className="social-pill-icon"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 4-8 4z"/></svg>
+            </a>
+            <a 
+              href="https://www.tiktok.com/@whitecollaradvice" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              title="TikTok"
+              style={{ width: "44px", height: "44px", borderRadius: "50%", border: "1px solid #e2e8f0", background: "transparent", color: "#64748b", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.2s" }}
+              className="social-pill-icon"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.47-.13-.08-.26-.17-.38-.25v7.39c.02 1.94-.39 3.91-1.58 5.46-1.57 2.11-4.03 3.39-6.66 3.39-2.07 0-4.11-.8-5.63-2.22-1.51-1.47-2.43-3.51-2.43-5.69 0-2.13.88-4.16 2.36-5.64 1.51-1.55 3.65-2.49 5.86-2.49h.2v4.06c-1.12.02-2.21.36-3.11 1.05-.88.66-1.43 1.68-1.54 2.77-.01.12-.02.24-.02.37 0 .8.27 1.58.78 2.19.53.65 1.3 1.12 2.11 1.25.13.02.26.03.39.03.8 0 1.57-.27 2.19-.78.65-.53 1.12-1.3 1.25-2.11.02-.13.03-.26.03-.39V0h1.42z"/></svg>
+            </a>
+            <a 
+              href="https://www.instagram.com/whitecollaradvice" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              title="Instagram"
+              style={{ width: "44px", height: "44px", borderRadius: "50%", border: "1px solid #e2e8f0", background: "transparent", color: "#64748b", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.2s" }}
+              className="social-pill-icon"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.805.249 2.227.412.56.216.96.474 1.38.894.42.42.678.82.894 1.38.163.422.358 1.057.412 2.227.059 1.266.071 1.646.071 4.85s-.012 3.584-.07 4.85c-.054 1.17-.249 1.805-.412 2.227-.216.56-.474.96-.894 1.38-.42.42-.82.678-1.38.894-.422.163-1.057.358-2.227.412-1.266.059-1.646.071-4.85.071s-3.584-.012-4.85-.07c-1.17-.054-1.805-.249-2.227-.412-.56-.216-.96-.474-1.38-.894-.42-.42-.678-.82-.894-1.38-.163-.422-.358-1.057-.412-2.227-.058-1.266-.071-1.646-.071-4.85s.013-3.584.071-4.85c.054-1.17.249-1.805.412-2.227.216-.56.474-.96.894-1.38.42-.42.82-.678 1.38-.894.422-.163 1.057-.358 2.227-.412 1.266-.057 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.277.057-2.148.26-2.911.557-.79.306-1.459.717-2.126 1.384-.667.667-1.078 1.335-1.384 2.126-.297.763-.5 1.634-.557 2.911-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.057 1.277.26 2.148.557 2.911.306.79.717 1.459 1.384 2.126.667.667 1.335 1.078 2.126 1.384.763.297 1.634.5 2.911.557 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.277-.057 2.148-.26 2.911-.557.79-.306 1.459-.717 2.126-1.384.667-.667 1.078-1.335 1.384-2.126.297-.763.5-1.634.557-2.911.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.057-1.277-.26-2.148-.557-2.911-.306-.79-.717-1.459-1.384-2.126-.667-.667-1.335-1.078-2.126-1.384-.763-.297-1.634-.5-2.911-.557-1.28-.058-1.688-.072-4.947-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+
+          <div style={{ textAlign: "center" }}>
+            <a href="https://www.youtube.com/@WhiteCollarAdviceOfficial" target="_blank" rel="noopener noreferrer" className="btn-ghost">
+              Follow for Daily Strategy
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── BOTTOM CTA ────────────────────────────────────────────── */}
       <section style={{ background: "#385ff6", padding: "5rem 0" }}>
         <div className="container" style={{ textAlign: "center" }}>
@@ -839,7 +1185,11 @@ export default function Home() {
           .testimonials-grid { grid-template-columns: 1fr !important; }
           .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
           .split-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+          .featured-video-grid { grid-template-columns: 1fr !important; }
         }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .short-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.3); }
+        .social-pill-icon:hover { border-color: #385ff6 !important; color: #385ff6 !important; transform: translateY(-2px); }
         @media (max-width: 900px) {
           .testimonials-grid { grid-template-columns: 1fr 1fr !important; }
         }
