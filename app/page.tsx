@@ -153,7 +153,7 @@ export default function Home() {
               }}
             >
               <span style={{ width: 6, height: 6, background: "#385ff6", borderRadius: "50%", display: "inline-block" }} />
-              Federal Sentencing Experts · Est. 2013
+              Federal Sentencing Experts · Est. 2008
             </span>
           </motion.div>
 
