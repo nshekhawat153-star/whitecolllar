@@ -31,13 +31,13 @@ function useCountUp(target: number, duration = 1800) {
 }
 
 const stats = [
-  { end: 10, suffix: "M+", label: "Documents Scanned" },
-  { end: 1.2, suffix: "M+", label: "Hours Automated", decimal: true },
-  { end: 250, suffix: "+", label: "Active Firms" },
-  { end: 99.99, suffix: "%", label: "Uptime SLA", decimal: true },
+  { end: 400, suffix: "+", label: "Federal Cases Guided" },
+  { end: 26, suffix: " yrs", label: "Inside the Federal System — Our Foundation" },
+  { prefix: "57→", end: 15, suffix: "", label: "Months Reduced — Documented Client Outcome" },
+  { end: 85, suffix: "%+", label: "Federal Conviction Rate in Cases We Handle" },
 ];
 
-function StatItem({ end, suffix, label, decimal }: { end: number; suffix: string; label: string; decimal?: boolean }) {
+function StatItem({ end, suffix, label, decimal, prefix = "" }: { end: number; suffix: string; label: string; decimal?: boolean; prefix?: string }) {
   const target = decimal ? Math.round(end * 10) : end;
   const { val, ref } = useCountUp(target);
   const display = decimal ? (val / 10).toFixed(decimal ? 1 : 0) : val;
@@ -54,7 +54,7 @@ function StatItem({ end, suffix, label, decimal }: { end: number; suffix: string
           marginBottom: "0.4rem",
         }}
       >
-        {display}{suffix}
+        {prefix}{display}{suffix}
       </p>
       <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.875rem", color: "rgba(255,255,255,0.7)", fontWeight: 500 }}>
         {label}
@@ -63,53 +63,63 @@ function StatItem({ end, suffix, label, decimal }: { end: number; suffix: string
   );
 }
 
-const trustedFirms = ["White Collar Advice", "Prison Professors", "Sentencing Hub", "Justice Solutions"];
+const trustedFirms = ["Bloomberg Law", "American Bar Association", "Business Insider", "Prison Professors", "Insider"];
 
 const differentiators = [
   {
     icon: "⚖️",
-    title: "Investigation Timeline",
-    description: "Organize government discovery and personal records into a cohesive timeline to identify weaknesses in the government case.",
-    tags: ["Discovery Mapping", "Evidence Chronology"],
+    title: "Not Boilerplate. Not Outsourced.",
+    description: "We only ask clients to do what our team has already done. Michael Santos spent 26 years inside the federal prison system and built this method from the inside out. Every strategy is proven, not theoretical.",
+    tags: [],
   },
   {
     icon: "🏛️",
-    title: "BOP Policy Navigator",
-    description: "Real-time guidance on Bureau of Prisons policies, including First Step Act credits, RDAP eligibility, and facility placement.",
-    tags: ["First Step Act Calculator", "Facility Placement"],
+    title: "We Build the Documented Record",
+    description: "Your lawyer handles the law. We handle the work most people delay until panic sets in — creating the narrative, character letters, and evidence that influence judges and probation officers before sentencing.",
+    tags: [],
   },
   {
     icon: "✍️",
-    title: "Mitigation Narrative Bot",
-    description: "AI-assisted drafting for personal narratives, helping clients articulate their background and remorse effectively for the PSR.",
-    tags: ["Remorse Articulation", "Character Reference"],
+    title: "Attorney-Endorsed, Not Attorney-Replaced",
+    description: "Hundreds of defense attorneys refer clients to us. We work alongside your legal team — adding the documented preparation that courtrooms respond to, without replacing a single legal argument.",
+    tags: [],
   },
   {
     icon: "📊",
-    title: "Sentencing Matrix Pro",
-    description: "Advanced calculator for Federal Sentencing Guidelines, helping defendants understand their base offense level and potential departures.",
-    tags: ["Offense Level Calculation", "Criminal History Scoring"],
+    title: "Every Phase. One Team.",
+    description: "From the moment of investigation through supervised release, we stay with you. The record you build inside federal prison is reviewed by case managers, wardens, and the parole commission. We help you build it.",
+    tags: [],
   },
 ];
 
 const testimonials = [
   {
-    quote: "The mitigation narrative bot helped me find my voice when I was too paralyzed by fear to write my own story for the judge.",
-    author: "David L.",
-    role: "Client · Federal Defendant",
-    initials: "DL",
+    badge: "57 months → 15 months",
+    quote: "The government was asking for 57–71 months and I was sentenced to 15. They are so much more than 'prison consultants' — more like disaster specialists, therapists, and friends. I am forever grateful.",
+    author: "— Federal Defendant",
+    role: "",
+    initials: "FD",
   },
   {
-    quote: "Preparation is the antidote to fear. These tools help our clients build the documented record they need to return home sooner.",
-    author: "Michael Santos",
-    role: "Partner · Prison Professors",
-    initials: "MS",
+    badge: "51–63 months → 33 months",
+    quote: "Dr. Nate Schott faced a government recommendation of 51–63 months. After building a complete mitigation package with White Collar Advice, he received 33 months and was home in 10.",
+    author: "— Dr. Nate Schott, Client",
+    role: "",
+    initials: "NS",
   },
   {
-    quote: "Our platform gives defendants the same level of preparation usually reserved for high-stakes corporate litigation. It changes the outcome.",
-    author: "Justin Paperny",
-    role: "Founder · White Collar Advice",
-    initials: "JP",
+    badge: "EU Extradition Blocked",
+    quote: "White Collar Advice helped me fight extradition from the EU to the U.S. Carole's detailed medical affidavit played a key role. Their professionalism and timely delivery make them my top recommendation.",
+    author: "— International Client",
+    role: "",
+    initials: "IC",
+  },
+  {
+    badge: "10 Years → 2 Years",
+    quote: "When Mario Hernandez reached out facing ten years, the strategy they helped build cut his sentence dramatically — as featured in Insider.",
+    author: "— Mario Hernandez, via Insider",
+    role: "",
+    initials: "MH",
   },
 ];
 
@@ -186,6 +196,22 @@ export default function Home() {
             judges, probation officers, and the Bureau of Prisons.
           </motion.p>
 
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={2.5}
+            style={{
+              fontFamily: "var(--font-inter)",
+              fontSize: "0.9rem",
+              color: "#94a3b8",
+              maxWidth: "560px",
+              margin: "0 auto 2.5rem",
+            }}
+          >
+            Built by Michael Santos — who spent 26 years inside the federal prison system designing this from the inside out.
+          </motion.p>
+
           {/* Buttons */}
           <motion.div
             variants={fadeUp}
@@ -220,7 +246,7 @@ export default function Home() {
                 color: "#94a3b8",
               }}
             >
-              Trusted by attorneys at
+              As seen & cited in
             </span>
             {trustedFirms.map((f) => (
               <span
@@ -253,6 +279,24 @@ export default function Home() {
             }}
           >
             <div>
+              <span
+                style={{
+                  display: "inline-block",
+                  background: "rgba(56,95,246,0.08)",
+                  color: "#385ff6",
+                  border: "1px solid rgba(56,95,246,0.2)",
+                  fontSize: "0.7rem",
+                  fontWeight: 600,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  padding: "0.25rem 0.75rem",
+                  borderRadius: "999px",
+                  fontFamily: "var(--font-inter)",
+                  marginBottom: "1.25rem",
+                }}
+              >
+                Our Differentiators
+              </span>
               <motion.h2
                 variants={fadeUp}
                 initial="hidden"
@@ -267,11 +311,8 @@ export default function Home() {
                   marginBottom: "0.5rem",
                 }}
               >
-                Strategic Mitigation
+                A System Built by Someone Who Lived It.
               </motion.h2>
-              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem", color: "#64748b", maxWidth: "420px" }}>
-                Our platform combines proprietary sentencing data with human-centered mitigation strategy to change the trajectory of federal cases.
-              </p>
             </div>
             <Link
               href="/process"
@@ -374,6 +415,24 @@ export default function Home() {
       {/* ── EXPERTS YOU CAN TRUST ─────────────────────────────────── */}
       <section style={{ padding: "5rem 0" }}>
         <div className="container" style={{ textAlign: "center" }}>
+          <span
+            style={{
+              display: "inline-block",
+              background: "rgba(56,95,246,0.08)",
+              color: "#385ff6",
+              border: "1px solid rgba(56,95,246,0.2)",
+              fontSize: "0.7rem",
+              fontWeight: 600,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              padding: "0.25rem 0.75rem",
+              borderRadius: "999px",
+              fontFamily: "var(--font-inter)",
+              marginBottom: "1.25rem",
+            }}
+          >
+            Client Outcomes
+          </span>
           <motion.h2
             variants={fadeUp}
             initial="hidden"
@@ -385,20 +444,17 @@ export default function Home() {
               fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
               letterSpacing: "-0.02em",
               color: "#385ff6",
-              marginBottom: "0.5rem",
+              marginBottom: "3rem",
             }}
           >
-            Experts You Can Trust
+            Real sentences. Documented reductions.
           </motion.h2>
-          <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem", color: "#64748b", maxWidth: "400px", margin: "0 auto 3rem" }}>
-            Lead by Justin Paperny and the White Collar Advice team, we provide the tools needed for a successful outcome in the federal system.
-          </p>
 
           {/* Testimonials */}
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
+              gridTemplateColumns: "repeat(2, 1fr)",
               gap: "1.5rem",
             }}
             className="testimonials-grid"
@@ -419,6 +475,11 @@ export default function Home() {
                   textAlign: "left",
                 }}
               >
+                <div style={{ marginBottom: "1rem" }}>
+                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.75rem", fontWeight: 700, color: "#385ff6", background: "rgba(56,95,246,0.1)", padding: "0.2rem 0.6rem", borderRadius: "4px" }}>
+                    {t.badge}
+                  </span>
+                </div>
                 <p
                   style={{
                     fontFamily: "var(--font-inter)",
@@ -601,10 +662,10 @@ export default function Home() {
               lineHeight: 1.1,
             }}
           >
-            Ready to lead the<br />future of your defense?
+            Every day without a documented mitigation strategy is a day the government is building theirs.
           </motion.h2>
           <p style={{ fontFamily: "var(--font-inter)", fontSize: "1rem", color: "rgba(255,255,255,0.75)", marginBottom: "2rem" }}>
-            Join the nation&apos;s most innovative defense teams already using White Collar Advice to gain a massive advantage.
+            The earlier you start, the more we can build. Schedule a confidential call — no obligation, response within 24 hours.
           </p>
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
             <Link
@@ -626,7 +687,7 @@ export default function Home() {
               Get Started Now
             </Link>
             <Link href="/contact" className="btn-ghost-white">
-              Contact Strategy
+              Join Free Webinar
             </Link>
           </div>
         </div>

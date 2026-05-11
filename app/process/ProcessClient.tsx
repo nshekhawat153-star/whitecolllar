@@ -40,13 +40,14 @@ const phases = [
 ];
 
 const comparison = [
-  { feature: "Starts before PSR", them: false, us: true },
-  { feature: "Personal narrative development", them: false, us: true },
-  { feature: "Community service documentation", them: false, us: true },
-  { feature: "Character letter strategy", them: false, us: true },
-  { feature: "Attorney-reviewed mitigation", them: false, us: true },
-  { feature: "BOP policy navigation", them: false, us: true },
-  { feature: "Post-sentencing support", them: false, us: true },
+  { feature: "Legal motions & courtroom argument", attorney: "✓", consultant: "✗", wca: "✓ We connect you to the right attorney" },
+  { feature: "Starts before PSR is written", attorney: "✗", consultant: "✗", wca: "✓" },
+  { feature: "Personal narrative development", attorney: "✗", consultant: "Boilerplate", wca: "✓ Custom" },
+  { feature: "Community service documentation", attorney: "✗", consultant: "✗", wca: "✓" },
+  { feature: "Character letter strategy", attorney: "✗", consultant: "Generic", wca: "✓ Tailored" },
+  { feature: "Lived inside the federal system", attorney: "✗", consultant: "Varies", wca: "✓ 26 yrs" },
+  { feature: "BOP policy navigation", attorney: "✗", consultant: "✓", wca: "✓" },
+  { feature: "Post-sentencing support", attorney: "✗", consultant: "Limited", wca: "✓ All phases" },
 ];
 
 export default function ProcessClient() {
@@ -224,6 +225,79 @@ export default function ProcessClient() {
         </div>
       </section>
 
+      {/* ── MICHAEL SANTOS CALLOUT ───────────────────────────── */}
+      <section style={{ background: "var(--bg-surface, #f8fafc)", padding: "5rem 0", borderTop: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0" }}>
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }} className="split-grid">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportConfig}>
+              <span
+                style={{
+                  display: "inline-block",
+                  background: "rgba(56,95,246,0.08)",
+                  color: "#385ff6",
+                  border: "1px solid rgba(56,95,246,0.2)",
+                  fontSize: "0.7rem",
+                  fontWeight: 600,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  padding: "0.25rem 0.75rem",
+                  borderRadius: "999px",
+                  fontFamily: "var(--font-inter)",
+                  marginBottom: "1.25rem",
+                }}
+              >
+                Why Trust Us
+              </span>
+              <h2
+                style={{
+                  fontFamily: "var(--font-playfair, serif)",
+                  fontWeight: 900,
+                  fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+                  letterSpacing: "-0.03em",
+                  color: "#030712",
+                  marginBottom: "1rem",
+                  lineHeight: 1.1,
+                }}
+              >
+                26 years inside. Built from the inside out.
+              </h2>
+              <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem", color: "#64748b", lineHeight: 1.7 }}>
+                Michael Santos entered federal prison in 1987 and served 26 years. During that time, he documented exactly what worked — and what didn't — when it came to influencing case managers, wardens, judges on appeal, and the parole commission. White Collar Advice is that system. We don't theorize about what judges respond to. We know.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewportConfig} custom={1}>
+              <div
+                style={{
+                  background: "var(--accent-glow, rgba(56,95,246,0.05))",
+                  border: "1px solid var(--accent-border, rgba(56,95,246,0.2))",
+                  borderRadius: "16px",
+                  padding: "2rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "1.25rem",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                  <span style={{ fontFamily: "var(--font-inter)", fontWeight: 700, fontSize: "1.125rem", color: "#385ff6", width: "100px" }}>1987 – 2013</span>
+                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem", color: "#64748b" }}>· Inside the Federal System</span>
+                </div>
+                <div style={{ width: "100%", height: "1px", background: "rgba(56,95,246,0.1)" }}></div>
+                <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                  <span style={{ fontFamily: "var(--font-inter)", fontWeight: 700, fontSize: "1.125rem", color: "#385ff6", width: "100px" }}>26 years</span>
+                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem", color: "#64748b" }}>· Building this methodology</span>
+                </div>
+                <div style={{ width: "100%", height: "1px", background: "rgba(56,95,246,0.1)" }}></div>
+                <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                  <span style={{ fontFamily: "var(--font-inter)", fontWeight: 700, fontSize: "1.125rem", color: "#385ff6", width: "100px" }}>400+ cases</span>
+                  <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem", color: "#64748b" }}>· Guided since release</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ── COMPARISON TABLE ─────────────────────────────────── */}
       <section style={{ background: "#f8fafc", borderTop: "1px solid #e2e8f0", padding: "5rem 0" }}>
         <div className="container" style={{ maxWidth: "800px" }}>
@@ -260,7 +334,7 @@ export default function ProcessClient() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 120px 120px",
+                gridTemplateColumns: "1fr 120px 120px 140px",
                 padding: "1rem 1.5rem",
                 background: "#f8fafc",
                 borderBottom: "1px solid #e2e8f0",
@@ -270,9 +344,12 @@ export default function ProcessClient() {
                 Feature
               </span>
               <span style={{ fontFamily: "var(--font-inter)", fontWeight: 600, fontSize: "0.8125rem", color: "#64748b", textAlign: "center" }}>
-                Typical Consultant
+                Defense Attorney
               </span>
-              <span style={{ fontFamily: "var(--font-inter)", fontWeight: 700, fontSize: "0.8125rem", color: "#385ff6", textAlign: "center" }}>
+              <span style={{ fontFamily: "var(--font-inter)", fontWeight: 600, fontSize: "0.8125rem", color: "#64748b", textAlign: "center" }}>
+                Prison Consultant
+              </span>
+              <span style={{ fontFamily: "var(--font-inter)", fontWeight: 700, fontSize: "0.8125rem", color: "var(--accent, #385ff6)", textAlign: "center" }}>
                 White Collar Advice
               </span>
             </div>
@@ -287,7 +364,7 @@ export default function ProcessClient() {
                 custom={i * 0.05}
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "1fr 120px 120px",
+                  gridTemplateColumns: "1fr 120px 120px 140px",
                   padding: "1rem 1.5rem",
                   borderBottom: i < comparison.length - 1 ? "1px solid #e2e8f0" : "none",
                   background: i % 2 === 0 ? "#fff" : "#fafafa",
@@ -296,8 +373,9 @@ export default function ProcessClient() {
                 <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.9rem", color: "#030712" }}>
                   {row.feature}
                 </span>
-                <span style={{ textAlign: "center", fontSize: "1rem", color: "#ef4444" }}>✕</span>
-                <span style={{ textAlign: "center", fontSize: "1rem", color: "#22c55e" }}>✓</span>
+                <span style={{ textAlign: "center", fontSize: "0.875rem", color: row.attorney.includes("✓") ? "#030712" : "var(--text-muted, #94a3b8)" }}>{row.attorney}</span>
+                <span style={{ textAlign: "center", fontSize: "0.875rem", color: row.consultant.includes("✓") ? "#030712" : (row.consultant.includes("✗") ? "var(--text-muted, #94a3b8)" : "#64748b") }}>{row.consultant}</span>
+                <span style={{ textAlign: "center", fontSize: "0.875rem", fontWeight: row.wca.includes("✓") ? 600 : 400, color: row.wca.includes("✓") ? "var(--accent, #385ff6)" : "var(--text-muted, #94a3b8)" }}>{row.wca}</span>
               </motion.div>
             ))}
           </div>
@@ -355,6 +433,7 @@ export default function ProcessClient() {
       <style>{`
         @media (max-width: 640px) {
           .phase-row { grid-template-columns: 1fr !important; gap: 1rem !important; }
+          .split-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
         }
       `}</style>
     </main>
