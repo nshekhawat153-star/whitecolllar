@@ -259,10 +259,10 @@ export default function ProcessClient() {
                   lineHeight: 1.1,
                 }}
               >
-                26 years inside. Built from the inside out.
+                26 years inside. Methodology built from the inside out.
               </h2>
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem", color: "#64748b", lineHeight: 1.7 }}>
-                Michael Santos entered federal prison in 1987 and served 26 years. During that time, he documented exactly what worked — and what didn't — when it came to influencing case managers, wardens, judges on appeal, and the parole commission. White Collar Advice is that system. We don't theorize about what judges respond to. We know.
+                Co-founder Michael Santos entered federal prison in 1987 and served 26 years. During that time, he built the knowledge and methodology of exactly what worked — and what didn't — when it came to influencing case managers, wardens, judges on appeal, and the parole commission. Founded by Justin Paperny, White Collar Advice applies that proven system. We don't theorize about what judges respond to. We know.
               </p>
             </motion.div>
 

@@ -71,7 +71,7 @@ const differentiators = [
   {
     icon: "⚖️",
     title: "Not Boilerplate. Not Outsourced.",
-    description: "We only ask clients to do what our team has already done. Michael Santos spent 26 years inside the federal prison system and built this method from the inside out. Every strategy is proven, not theoretical.",
+    description: "We only ask clients to do what our team has already done. Co-founder Michael Santos spent 26 years inside the federal prison system and built our methodology from the inside out. Every strategy is proven, not theoretical.",
     tags: [],
   },
   {
@@ -211,7 +211,7 @@ export default function Home() {
               margin: "0 auto 2.5rem",
             }}
           >
-            Built by Michael Santos — who spent 26 years inside the federal prison system designing this from the inside out.
+            Founded by Justin Paperny. Methodology by co-founder Michael Santos, who spent 26 years inside the federal system building this knowledge from the inside out.
           </motion.p>
 
           {/* Buttons */}
