@@ -159,125 +159,263 @@ export default function Home() {
     <main style={{ background: "#fff", paddingTop: "60px" }}>
 
       {/* ── HERO ──────────────────────────────────────────────── */}
-      <section style={{ paddingTop: "5rem", paddingBottom: "5rem" }}>
-        <div className="container" style={{ textAlign: "center", maxWidth: "860px" }}>
-          {/* Version badge */}
-          <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={0}>
-            <span
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.4rem",
-                background: "rgba(56, 95, 246, 0.08)",
-                color: "#385ff6",
-                border: "1px solid rgba(56, 95, 246, 0.2)",
-                fontSize: "0.72rem",
-                fontWeight: 600,
-                letterSpacing: "0.06em",
-                textTransform: "uppercase",
-                padding: "0.3rem 0.9rem",
-                borderRadius: "999px",
-                fontFamily: "var(--font-inter)",
-                marginBottom: "2rem",
-              }}
-            >
-              <span style={{ width: 6, height: 6, background: "#385ff6", borderRadius: "50%", display: "inline-block" }} />
-              Federal Sentencing Experts · Est. 2008
-            </span>
-          </motion.div>
+      <section style={{ 
+        paddingTop: "4rem", 
+        paddingBottom: "4rem", 
+        minHeight: "90vh", 
+        display: "flex", 
+        alignItems: "center",
+        background: "#fff",
+        overflow: "hidden"
+      }}>
+        <div className="container">
+          <div className="hero-grid-layout">
+            {/* Left Column (Content) */}
+            <div className="hero-left-content">
+              {/* Version badge */}
+              <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={0}>
+                <span
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.4rem",
+                    background: "rgba(56, 95, 246, 0.08)",
+                    color: "#385ff6",
+                    border: "1px solid rgba(56, 95, 246, 0.2)",
+                    fontSize: "0.72rem",
+                    fontWeight: 600,
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                    padding: "0.3rem 0.9rem",
+                    borderRadius: "999px",
+                    fontFamily: "var(--font-inter)",
+                    marginBottom: "2rem",
+                  }}
+                >
+                  <span style={{ width: 6, height: 6, background: "#385ff6", borderRadius: "50%", display: "inline-block" }} />
+                  Federal Sentencing Experts · Est. 2008
+                </span>
+              </motion.div>
 
-          {/* H1 */}
-          <motion.h1
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={1}
-            style={{
-              fontFamily: "var(--font-inter)",
-              fontWeight: 900,
-              fontSize: "clamp(3rem, 7vw, 5.5rem)",
-              letterSpacing: "-0.04em",
-              lineHeight: 0.95,
-              color: "#030712",
-              marginBottom: "1.75rem",
-            }}
-          >
-            Build a Record That<br />
-            <span style={{ color: "#385ff6" }}>Changes What Judges</span><br />
-            Do Next.
-          </motion.h1>
+              {/* H1 */}
+              <motion.h1
+                variants={fadeUp}
+                initial="hidden"
+                animate="visible"
+                custom={1}
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontWeight: 900,
+                  fontSize: "clamp(2.75rem, 5.5vw, 4.75rem)",
+                  letterSpacing: "-0.04em",
+                  lineHeight: 1.05,
+                  color: "#030712",
+                  marginBottom: "1.75rem",
+                  maxWidth: "700px",
+                }}
+              >
+                Build a Record That<br />
+                <span style={{ color: "#385ff6" }}>Changes What Judges</span><br />
+                Do Next.
+              </motion.h1>
 
-          {/* Sub */}
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={2}
-            style={{
-              fontFamily: "var(--font-inter)",
-              fontSize: "clamp(1rem, 2vw, 1.2rem)",
-              color: "#64748b",
-              lineHeight: 1.7,
-              maxWidth: "560px",
-              margin: "0 auto 2.5rem",
-            }}
-          >
-            We are not prison consultants. We help white collar federal defendants create documented
-            evidence — narrative, character letters, community service — that influences
-            judges, probation officers, and the Bureau of Prisons.
-          </motion.p>
+              {/* Sub */}
+              <motion.p
+                variants={fadeUp}
+                initial="hidden"
+                animate="visible"
+                custom={2}
+                className="hero-subtext"
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontSize: "clamp(1.1rem, 1.5vw, 1.2rem)",
+                  color: "#64748b",
+                  lineHeight: 1.6,
+                  maxWidth: "620px",
+                  marginBottom: "2rem",
+                }}
+              >
+                We are not prison consultants. We help white collar federal defendants create documented
+                evidence — narrative, character letters, community service — that influences
+                judges, probation officers, and the Bureau of Prisons.
+              </motion.p>
 
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={2.5}
-            style={{
-              fontFamily: "var(--font-inter)",
-              fontSize: "0.9rem",
-              color: "#94a3b8",
-              maxWidth: "560px",
-              margin: "0 auto 2.5rem",
-            }}
-          >
-            Founded by Justin Paperny. Methodology by co-founder Michael Santos, who spent 26 years inside the federal system building this knowledge from the inside out.
-          </motion.p>
+              <motion.p
+                variants={fadeUp}
+                initial="hidden"
+                animate="visible"
+                custom={2.5}
+                className="hero-subtext"
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontSize: "0.95rem",
+                  color: "#94a3b8",
+                  maxWidth: "600px",
+                  marginBottom: "3rem",
+                  lineHeight: 1.5,
+                }}
+              >
+                Founded by Justin Paperny. Methodology by co-founder Michael Santos, who spent 26 years inside the federal system building this knowledge from the inside out.
+              </motion.p>
 
-          {/* Buttons */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={3}
-            style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", marginBottom: "3.5rem" }}
-          >
-            <Link href="/contact" className="btn-primary btn-lg">
-              Schedule a Confidential Call
-            </Link>
-            <Link href="/process" className="btn-ghost btn-lg">
-              How It Works →
-            </Link>
-          </motion.div>
+              {/* Buttons */}
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                animate="visible"
+                custom={3}
+                className="hero-button-group"
+                style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center", marginBottom: "4rem" }}
+              >
+                <Link href="/contact" className="btn-primary btn-lg" style={{ padding: "1rem 2.4rem", borderRadius: "16px" }}>
+                  Schedule a Confidential Call
+                </Link>
+                <Link href="/process" className="btn-ghost btn-lg" style={{ padding: "1rem 2rem", borderRadius: "16px" }}>
+                  How It Works →
+                </Link>
+              </motion.div>
 
-          {/* Trusted by */}
+            </div>
+
+            {/* Right Column (Visual) */}
+            <div className="hero-right-visual" style={{ paddingTop: "4.25rem" }}>
+              <motion.div
+                initial={{ x: 40, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                style={{ position: "relative", width: "100%", display: "flex", justifyContent: "flex-end" }}
+              >
+                {/* Enhanced ambient glow */}
+                <div style={{
+                  position: "absolute",
+                  width: "150%",
+                  height: "150%",
+                  background: "radial-gradient(circle, rgba(56,95,246,0.15) 0%, rgba(56,95,246,0) 70%)",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  zIndex: -1,
+                  pointerEvents: "none"
+                }} />
+
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                  style={{
+                    background: "#fff",
+                    border: "1px solid var(--border)",
+                    borderRadius: "24px",
+                    overflow: "hidden",
+                    maxWidth: "380px",
+                    width: "100%",
+                    boxShadow: "0 20px 80px rgba(0,0,0,0.12), 0 0 40px rgba(56,95,246,0.1)",
+                  }}
+                >
+                  {/* Premium Top label bar */}
+                  <div style={{ 
+                    background: "var(--bg-surface)", 
+                    padding: "12px 20px", 
+                    display: "flex", 
+                    alignItems: "center", 
+                    justifyContent: "space-between",
+                    borderBottom: "1px solid var(--border)"
+                  }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <div className="pulse-dot" style={{ width: "8px", height: "8px", background: "#ef4444", borderRadius: "50%" }} />
+                      <span style={{ 
+                        fontFamily: "var(--font-inter)", 
+                        fontWeight: 600, 
+                        fontSize: "0.65rem", 
+                        color: "#64748b", 
+                        textTransform: "uppercase", 
+                        letterSpacing: "0.12em" 
+                      }}>
+                        LIVE · JUSTIN PAPERNY
+                      </span>
+                    </div>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#ef4444">
+                      <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                    </svg>
+                  </div>
+
+                  {/* Video area */}
+                  <div style={{ position: "relative", width: "100%", aspectRatio: "9/16", background: "#000" }}>
+                    <iframe
+                      src="https://www.youtube.com/embed/cbCqjWF3gjY?autoplay=1&mute=1&loop=1&playlist=cbCqjWF3gjY&controls=0&modestbranding=1"
+                      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                    />
+                  </div>
+
+                  {/* High-end Bottom bar */}
+                  <div style={{ 
+                    padding: "16px 20px", 
+                    display: "flex", 
+                    alignItems: "center", 
+                    justifyContent: "space-between", 
+                    gap: "16px",
+                    background: "#030712" 
+                  }}>
+                    <p style={{ 
+                      fontFamily: "var(--font-inter)", 
+                      fontWeight: 600, 
+                      fontSize: "0.85rem", 
+                      color: "#fff", 
+                      margin: 0,
+                      lineHeight: "1.4",
+                    }}>
+                      What judges actually read at sentencing
+                    </p>
+                    <div style={{ 
+                      background: "var(--accent)", 
+                      color: "#fff", 
+                      fontFamily: "var(--font-inter)", 
+                      fontWeight: 700, 
+                      fontSize: "0.75rem", 
+                      padding: "6px 14px", 
+                      borderRadius: "12px",
+                      whiteSpace: "nowrap"
+                    }}>
+                      WATCH
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Trusted by - Architecturally Aligned Authority Bar */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={4}
-            style={{ display: "flex", alignItems: "center", gap: "1.5rem", justifyContent: "center", flexWrap: "wrap" }}
+            className="hero-trusted-by"
+            style={{ 
+              display: "flex", 
+              alignItems: "center", 
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              marginTop: "4.5rem",
+              paddingTop: "2.5rem",
+              borderTop: "1px solid #f1f5f9",
+              width: "100%",
+              gap: "2rem"
+            }}
           >
             <span
               style={{
                 fontFamily: "var(--font-inter)",
-                fontSize: "0.72rem",
-                fontWeight: 600,
-                letterSpacing: "0.08em",
+                fontSize: "0.75rem",
+                fontWeight: 800,
+                letterSpacing: "0.15em",
                 textTransform: "uppercase",
                 color: "#94a3b8",
+                whiteSpace: "nowrap"
               }}
             >
-              As seen in
+              As featured in
             </span>
             {trustedFirms.map((f) => (
               <img
@@ -285,16 +423,76 @@ export default function Home() {
                 src={f.src}
                 alt={f.name}
                 style={{
-                  height: "24px",
+                  height: f.name === "The New York Times" ? "30px" : "38px",
+                  width: "auto",
                   objectFit: "contain",
-                  filter: "brightness(0) invert(1)",
-                  opacity: 0.45,
+                  filter: "grayscale(100%) brightness(0.6)",
+                  opacity: 0.5,
+                  transition: "all 0.3s ease",
+                  cursor: "default"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.filter = "grayscale(0%) brightness(1)";
+                  e.currentTarget.style.opacity = "1";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.filter = "grayscale(100%) brightness(0.6)";
+                  e.currentTarget.style.opacity = "0.5";
                 }}
               />
             ))}
           </motion.div>
         </div>
+
+        <style jsx>{`
+          .hero-grid-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: start;
+          }
+          .hero-left-content {
+            text-align: center;
+          }
+          .hero-right-visual {
+            display: none;
+          }
+          .pulse-dot {
+            animation: pulse 2s infinite;
+          }
+          @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
+          }
+          @media (min-width: 768px) {
+            .hero-grid-layout {
+              grid-template-columns: 1.2fr 1fr;
+              text-align: left;
+              gap: 2rem;
+            }
+            .hero-left-content {
+              text-align: left;
+            }
+            .hero-right-visual {
+              display: flex;
+            }
+            .hero-subtext {
+              margin-left: 0 !important;
+              margin-right: 0 !important;
+            }
+            .hero-button-group {
+              justify-content: flex-start !important;
+              flex-wrap: nowrap !important;
+            }
+            .hero-trusted-by {
+              justify-content: flex-start !important;
+            }
+          }
+        `}</style>
       </section>
+
+
 
       {/* ── CAPABILITIES SECTION ──────────────────────────────────── */}
       <section style={{ background: "#f8fafc", padding: "5rem 0", borderTop: "1px solid #e2e8f0" }}>
