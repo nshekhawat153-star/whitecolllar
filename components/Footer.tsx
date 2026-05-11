@@ -49,7 +49,7 @@ export default function Footer() {
                 maxWidth: "240px",
               }}
             >
-              Modernizing federal defense with expert mitigation strategy. Secured, confidential, and ready for the most complex cases.
+              Federal sentencing mitigation for white collar defendants. Confidential, experience-based, and built from the inside out.
             </p>
           </div>
 

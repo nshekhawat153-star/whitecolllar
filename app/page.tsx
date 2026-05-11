@@ -193,7 +193,7 @@ export default function Home() {
               margin: "0 auto 2.5rem",
             }}
           >
-            We are not prison consultants. We help federal defendants create documented
+            We are not prison consultants. We help white collar federal defendants create documented
             evidence — narrative, character letters, community service — that influences
             judges, probation officers, and the Bureau of Prisons.
           </motion.p>
@@ -592,7 +592,7 @@ export default function Home() {
                 We are not prison<br />consultants.
               </h2>
               <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem", color: "#64748b", lineHeight: 1.7, marginBottom: "2rem" }}>
-                Prison consultants tell you what to expect. We help you build what actually matters — a documented record of who you are, what you&apos;ve done, and why the judge should consider a different path.
+                Prison consultants tell you what to expect. We help you build what actually matters — a documented record of who you are, what you&apos;ve done, and why the judge should consider a different path. We specialize in white collar cases — executives, professionals, and business owners who have careers, families, and reputations worth fighting for.
               </p>
               <Link href="/process" className="btn-primary">
                 See Our Process →

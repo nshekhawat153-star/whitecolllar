@@ -118,7 +118,7 @@ export default function ContactClient() {
                   marginBottom: "2rem",
                 }}
               >
-                We speak with defendants, families, and defense attorneys.
+                We speak with white collar defendants, their families, and defense attorneys handling complex federal cases.
                 All consultations are strictly confidential. There is no obligation — only clarity about your options and how much time you have left to act.
               </motion.p>
 
