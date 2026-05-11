@@ -65,7 +65,13 @@ function StatItem({ end, suffix, label, decimal, prefix = "" }: { end: number; s
   );
 }
 
-const trustedFirms = ["Bloomberg Law", "American Bar Association", "Business Insider", "Prison Professors", "Insider"];
+const trustedFirms = [
+  { name: "The New York Times", src: "https://www.whitecollaradvice.com/wp-content/uploads/2024/07/The_New_York_Times_logo-1024x151.webp" },
+  { name: "CNN", src: "https://www.whitecollaradvice.com/wp-content/uploads/2024/07/cnn-logo-topwca-1024x492.webp" },
+  { name: "Business Insider", src: "https://www.whitecollaradvice.com/wp-content/uploads/2024/07/business-insider-logo-topwca-1024x492.webp" },
+  { name: "Fortune", src: "https://www.whitecollaradvice.com/wp-content/uploads/2024/07/fortune-logo-topwca-1024x492.webp" },
+  { name: "CNBC", src: "https://www.whitecollaradvice.com/wp-content/uploads/2024/07/cnbc-logo-topwca-1024x492.webp" },
+];
 
 const differentiators = [
   {
@@ -97,31 +103,54 @@ const differentiators = [
 const testimonials = [
   {
     badge: "57 months → 15 months",
-    quote: "The government was asking for 57–71 months and I was sentenced to 15. They are so much more than 'prison consultants' — more like disaster specialists, therapists, and friends. I am forever grateful.",
-    author: "— Federal Defendant",
+    quote: "The government was asking for 57–71 months, and I was sentenced to 15. They are so much more than 'prison consultants' — more like disaster specialists, therapists, and friends.",
+    author: "Kent Courtheyn",
     role: "",
-    initials: "FD",
+    initials: "KC",
   },
   {
-    badge: "51–63 months → 33 months",
-    quote: "Dr. Nate Schott faced a government recommendation of 51–63 months. After building a complete mitigation package with White Collar Advice, he received 33 months and was home in 10.",
-    author: "— Dr. Nate Schott, Client",
+    badge: "17 months on a 51-month sentence",
+    quote: "The plan I built with WCA helped me serve 17 months on a 51-month sentence. The judge called my efforts 'extraordinary' and took 11 months off, plus 12 months in the halfway house.",
+    author: "Tracii Hutsona",
     role: "",
-    initials: "NS",
+    initials: "TH",
   },
   {
-    badge: "EU Extradition Blocked",
-    quote: "White Collar Advice helped me fight extradition from the EU to the U.S. Carole's detailed medical affidavit played a key role. Their professionalism and timely delivery make them my top recommendation.",
-    author: "— International Client",
+    badge: "48–60 months → Probation + 21 days",
+    quote: "I faced 48–60 months, but the judge said 'I'm going to do something unusual.' I got probation and 21 days in jail. That wasn't luck — I built my record.",
+    author: "David Moulder",
     role: "",
-    initials: "IC",
+    initials: "DM",
   },
   {
-    badge: "10 Years → 2 Years",
-    quote: "When Mario Hernandez reached out facing ten years, the strategy they helped build cut his sentence dramatically — as featured in Insider.",
-    author: "— Mario Hernandez, via Insider",
+    badge: "37 months → 10.5 months served",
+    quote: "If your lawyer won't hire them, fire your lawyer. Justin and the White Collar Advice team guided me through every step. I served 10.5 months on a 37-month sentence.",
+    author: "Branden Coluccio",
     role: "",
-    initials: "MH",
+    initials: "BC",
+  },
+];
+
+const attorneyEndorsements = [
+  {
+    quote: "WCA has been an invaluable partner since 2009, guiding my clients through sentencing and prison with practical strategies and firsthand knowledge.",
+    author: "Mark Werksman",
+    role: "Criminal Defense Attorney · Former Deputy D.A. & Former AUSA",
+    image: "https://www.whitecollaradvice.com/wp-content/uploads/2025/02/1516586731077-e1757118865766.webp",
+  },
+  {
+    quote: "They are the only consultants I trust and recommend. They eliminate fear and uncertainty with expert guidance.",
+    author: "Bernard Brody",
+    role: "Federal Defense Attorney, Atlanta",
+    image: "https://www.whitecollaradvice.com/wp-content/uploads/2025/02/BrodyBernardGA250x250.webp",
+    badge: "Since 2009",
+  },
+  {
+    quote: "I worked with WCA during the Varsity Blues case in 2019 — they achieved significant results.",
+    author: "David Rosenfield",
+    role: "Former Assistant U.S. Attorney, D.N.J.",
+    image: "https://www.whitecollaradvice.com/wp-content/uploads/2025/02/Screenshot-2025-02-06-at-9.47.28 AM-e1757110203453.webp",
+    badge: "Varsity Blues Case",
   },
 ];
 
@@ -248,20 +277,20 @@ export default function Home() {
                 color: "#94a3b8",
               }}
             >
-              As seen & cited in
+              As seen in
             </span>
             {trustedFirms.map((f) => (
-              <span
-                key={f}
+              <img
+                key={f.name}
+                src={f.src}
+                alt={f.name}
                 style={{
-                  fontFamily: "var(--font-inter)",
-                  fontSize: "0.8125rem",
-                  fontWeight: 600,
-                  color: "#64748b",
+                  height: "24px",
+                  objectFit: "contain",
+                  filter: "brightness(0) invert(1)",
+                  opacity: 0.45,
                 }}
-              >
-                {f}
-              </span>
+              />
             ))}
           </motion.div>
         </div>
@@ -537,6 +566,115 @@ export default function Home() {
           >
             {stats.map((s) => (
               <StatItem key={s.label} end={s.end} suffix={s.suffix} label={s.label} decimal={s.decimal} prefix={s.prefix} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ATTORNEY ENDORSEMENTS ────────────────────────────────────────────── */}
+      <section style={{ padding: "5rem 0", background: "#fff" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+            <span
+              style={{
+                display: "inline-block",
+                background: "rgba(56,95,246,0.08)",
+                color: "#385ff6",
+                border: "1px solid rgba(56,95,246,0.2)",
+                fontSize: "0.7rem",
+                fontWeight: 600,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                padding: "0.25rem 0.75rem",
+                borderRadius: "999px",
+                fontFamily: "var(--font-inter)",
+                marginBottom: "1rem",
+              }}
+            >
+              Trusted by Defense Attorneys
+            </span>
+            <motion.h2
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontWeight: 900,
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                letterSpacing: "-0.04em",
+                color: "#030712",
+              }}
+            >
+              The attorneys who refer us their clients.
+            </motion.h2>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "2rem",
+            }}
+            className="cards-grid"
+          >
+            {attorneyEndorsements.map((a, i) => (
+              <motion.div
+                key={a.author}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportConfig}
+                custom={i}
+                style={{
+                  background: "#f8fafc",
+                  border: "1px solid #e2e8f0",
+                  borderRadius: "16px",
+                  padding: "1.75rem",
+                  textAlign: "left",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                {a.badge && (
+                  <div style={{ marginBottom: "1rem" }}>
+                    <span style={{ fontFamily: "var(--font-inter)", fontSize: "0.75rem", fontWeight: 700, color: "#385ff6", background: "rgba(56,95,246,0.1)", padding: "0.2rem 0.6rem", borderRadius: "4px" }}>
+                      {a.badge}
+                    </span>
+                  </div>
+                )}
+                <p
+                  style={{
+                    fontFamily: "var(--font-inter)",
+                    fontSize: "0.9375rem",
+                    color: "#030712",
+                    lineHeight: 1.65,
+                    marginBottom: "1.25rem",
+                    fontStyle: "italic",
+                    flexGrow: 1,
+                  }}
+                >
+                  &ldquo;{a.quote}&rdquo;
+                </p>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.65rem", marginTop: "auto" }}>
+                  <img
+                    src={a.image}
+                    alt={a.author}
+                    style={{
+                      width: 44,
+                      height: 44,
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                      border: "2px solid #fff",
+                      boxShadow: "0 2px 8px rgba(0,0,0,0.08)"
+                    }}
+                  />
+                  <div>
+                    <p style={{ fontFamily: "var(--font-inter)", fontWeight: 700, fontSize: "0.875rem", color: "#030712" }}>{a.author}</p>
+                    <p style={{ fontFamily: "var(--font-inter)", fontSize: "0.75rem", color: "#64748b" }}>{a.role}</p>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
